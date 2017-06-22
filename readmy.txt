@@ -1,0 +1,10 @@
+NoSQL Injection HW
+Dima Girya && Liza Gilman
+
+Run MongoDb on mongodb://127.0.0.1:27017'
+run index.js: node index.js
+
+Query:
+POST localhost:3000/addTask?task=Eat                  -  Add new task
+GET  localhost:3000/getTask?task=Eat                  -  Get task by title
+GET  localhost:3000/getTask?task=0'; while(true){}'   -  Injection!

