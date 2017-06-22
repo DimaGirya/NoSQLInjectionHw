@@ -28,9 +28,3 @@ exports.getTask = function (req, res) {
         res.status(500).send(err);
     });
 };
-
-/*
- function() {
- while(1);
- }
- */
